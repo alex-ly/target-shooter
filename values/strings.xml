@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">CSCI4100finalproject</string>
     <string name="close">Close</string>
+    <string name="name">Name:</string>
+    <string name="score">Score:</string>
+    <string name="rank">Rank:</string>
 
 </resources>
