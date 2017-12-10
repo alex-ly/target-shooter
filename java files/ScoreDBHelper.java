@@ -50,7 +50,7 @@ public class ScoreDBHelper extends SQLiteOpenHelper{
     // CREATE
     public Score createScore(String name,
                              float playerScore) {
-        // create a new entity object (Contact)
+        // create a new entity object (Score)
         Score score = new Score(name, playerScore);
 
         // put that data into the database
