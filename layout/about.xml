@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mre_0.csci4100finalproject.AboutActivity"
+    >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="336dp"
+        android:layout_height="482dp"
+        android:text="@string/message2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="casual"
+        android:textSize="25sp"
+        android:padding="8dp"
+        android:textColor="@android:color/white"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteY="29dp"
+        tools:layout_editor_absoluteX="45dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Finish"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        android:padding="8dp"
+        app:layout_constraintVertical_bias="0.936"
+        android:onClick="Finish"
+        app:layout_constraintHorizontal_bias="0.521" />
+
+</android.support.constraint.ConstraintLayout>

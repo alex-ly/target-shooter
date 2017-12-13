@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.maazerati.target_shooting_game.targetShootGame">
+    tools:context="com.example.mre_0.csci4100finalproject.targetShootGame">
 
     <View android:id="@+id/background"
         android:layout_width="match_parent"
@@ -16,13 +16,11 @@
 
 
     <!--
-
     <FrameLayout android:id="@+id/fab_frame"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center">
-
         <android.support.design.widget.FloatingActionButton android:id="@+id/fab"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -31,7 +29,6 @@
             android:clickable="true"
             android:src="@android:drawable/ic_btn_speak_now" />
     </FrameLayout>
-
     -->
 
     <ImageView android:id="@+id/target"
