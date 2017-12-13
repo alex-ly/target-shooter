@@ -9,25 +9,25 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
+
 /**
- * Created by MrE_0 on 2017-11-14.
+ * Created by MrE_0 on 2017-12-12.
  */
 
-public class ScoreDBHelper extends SQLiteOpenHelper{
+public class UserDBHelper extends SQLiteOpenHelper{
     static final int DATABASE_VERSION = 1;
 
-    static final String TABLE = "scores";
+    static final String TABLE = "users";
 
-    static final String CREATE_STATEMENT = "CREATE TABLE scores (\n" +
+    static final String CREATE_STATEMENT = "CREATE TABLE users (\n" +
             "      _id integer primary key autoincrement,\n" +
-            "      name varchar(100) not null,\n" +
-            "      score decimal not null\n" +
+            "      name varchar(100) not null\n" +
             ")\n";
 
-    static final String DROP_STATEMENT = "DROP TABLE scores";
+    static final String DROP_STATEMENT = "DROP TABLE users";
 
-    public ScoreDBHelper(Context context) {
-        super(context, "scores", null, DATABASE_VERSION);
+    public UserDBHelper(Context context) {
+        super(context, "users", null, DATABASE_VERSION);
     }
 
     @Override
@@ -48,56 +48,51 @@ public class ScoreDBHelper extends SQLiteOpenHelper{
     }
 
     // CREATE
-    public Score createScore(String name,
-                             float playerScore) {
-        // create a new entity object (Contact)
-        Score score = new Score(name, playerScore);
+    public String createUser(String name) {
+        // create a new entity object (User)
+        //Score score = new Score(name, p);
 
         // put that data into the database
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues newValues = new ContentValues();
         newValues.put("name", name);
-        newValues.put("score", playerScore);
 
-        long id=db.insert(TABLE, null, newValues);
-        score.setId(id);
+        db.insert(TABLE, null, newValues);
+        //score.setId(id);
 
-        return score;
+        return name;
     }
 
-    public ArrayList<Score> getAllScores() {
-        ArrayList<Score> scores = new ArrayList<>();
+    public ArrayList<String> getAllUsers() {
+        ArrayList<String> users = new ArrayList<>();
 
         SQLiteDatabase db = this.getReadableDatabase();
-        String[] columns = new String[] {"_id", "name", "score"};
+        String[] columns = new String[] {"_id", "name"};
         String where = "";
         String[] whereArgs = new String[] {  };
-        Cursor cursor = db.query(TABLE, columns, where, whereArgs, "", "", "score DESC");
+        Cursor cursor = db.query(TABLE, columns, where, whereArgs, "", "", "name DESC");
 
         cursor.moveToFirst();
         do {
             if (!cursor.isAfterLast()) {
                 long id = cursor.getInt(0);
                 String name = cursor.getString(1);
-                float playerScore = cursor.getFloat(2);
 
-                Score score = new Score(name, playerScore);
-                score.setId(id);
 
-                scores.add(score);
+                users.add(name);
             }
 
             cursor.moveToNext();
         } while (!cursor.isAfterLast());
 
-        Log.i("SQLite", "getAllScores(): num = " + scores.size());
+        Log.i("SQLite", "getAllUsers(): num = " + users.size());
 
-        return scores;
+        return users;
     }
 
     // DELETE
-    public boolean deleteScore(long id) {
+    public boolean deleteUser(long id) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         int numRows = db.delete(TABLE, "_id = ?", new String[] { "" + id });

@@ -1,5 +1,10 @@
-package com.maazerati.target_shooting_game;
+package com.example.mre_0.csci4100finalproject;
 
+/**
+ * Created by MrE_0 on 2017-12-11.
+ */
+
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -29,6 +34,8 @@ public class targetShootGame extends AppCompatActivity {
     MediaPlayer music;
     int score = 0;
     int remainingTime;
+
+    private static final int GAME_CODE=3;
 
 
 
@@ -103,6 +110,18 @@ public class targetShootGame extends AppCompatActivity {
          *  another for 'View High Scores' which would connect to High Scores java file*/
         music.stop();
         Toast.makeText(getApplicationContext(), "Sorry Game Over", Toast.LENGTH_SHORT).show();
+        Intent callingIntent=getIntent();
+        //String username=callingIntent.getStringExtra("name");
+
+        //Intent passingIntent=new Intent(this, ShowHighScoreActivity.class);
+        //passingIntent.putExtra("name", username);
+        //passingIntent.putExtra("score", score*1.0f);
+        //callingIntent.putExtra("name", username);
+        callingIntent.putExtra("score", score*1.0f);
+
+        setResult(GAME_CODE);
+        finish();
+
     }
 
 
