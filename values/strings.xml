@@ -1,10 +1,23 @@
 <resources>
     <string name="app_name">CSCI4100finalproject</string>
-
     <string name="close">Close</string>
     <string name="name">Name:</string>
     <string name="score">Score:</string>
+
+    <string name="create">Create Account</string>
+    <string name="submit">Submit</string>
+
     <string name="rank">Rank:</string>
 
     <string name="initial_time">5.00 Seconds</string>
+
+    <string name = "message"> Target Practice</string>
+    <string name = "About"> About </string>
+    <string name = "Login">Login</string>
+    <string name = "message2"> This game was designed by Alex Ly, Gayanath Sasitharanathan, Maaz Ahmed. The purpose of the game is to see how long you can keep clicking the targets that appear. The Targets get smaller in size while increasing the speed they show at </string>
+    <string name = "Finish">Go Back To Main Menu</string>
+    <string name = "Login1">Start Game</string>
+    <string name = "Username"> Username</string>
+    <string name = "Password">Password</string>
+
 </resources>
