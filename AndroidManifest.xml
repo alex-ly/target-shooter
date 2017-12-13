@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.maazerati.target_shooting_game">
+    package="com.example.mre_0.csci4100finalproject">
+
+
 
     <application
         android:allowBackup="true"
@@ -8,14 +10,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".targetShootGame">
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ShowHighScoreActivity"></activity>
+        <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".targetShootGame"></activity>
+        <activity android:name=".CreateActivity"></activity>
+
     </application>
 
 </manifest>
