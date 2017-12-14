@@ -55,6 +55,14 @@ public class targetShootGame extends AppCompatActivity {
          *  another for 'View High Scores' which would connect to High Scores java file*/
         music.stop();
         Toast.makeText(getApplicationContext(), "Sorry Game Over", Toast.LENGTH_SHORT).show();
+        Intent callingIntent=getIntent();
+        Log.i("Score:", String.valueOf(score));
+        //callingIntent.putExtra("name", callingIntent.getStringExtra("name"));
+        callingIntent.putExtra("score", score*1.0f);
+
+        setResult(GAME_CODE, callingIntent);
+        finish();
+
     }
 
     CountDownTimer countDownTimer = new CountDownTimer(6000,1000) {
@@ -112,12 +120,6 @@ public class targetShootGame extends AppCompatActivity {
         music.stop();
         Toast.makeText(getApplicationContext(), "Sorry Game Over", Toast.LENGTH_SHORT).show();
         Intent callingIntent=getIntent();
-        //String username=callingIntent.getStringExtra("name");
-
-        //Intent passingIntent=new Intent(this, ShowHighScoreActivity.class);
-        //passingIntent.putExtra("name", username);
-        //passingIntent.putExtra("score", score*1.0f);
-        //callingIntent.putExtra("name", username);
         Log.i("Score:", String.valueOf(score));
         //callingIntent.putExtra("name", callingIntent.getStringExtra("name"));
         callingIntent.putExtra("score", score*1.0f);
