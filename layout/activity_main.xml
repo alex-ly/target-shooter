@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--android:background="@drawable/backgound"-->
+
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.mre_0.csci4100finalproject.MainActivity"
+    android:background="@drawable/backgound"
+
     >
 
     <TextView
@@ -19,7 +23,7 @@
         android:fontFamily="casual"
         android:textSize="42sp"
         android:padding="8dp"
-        android:textColor="@android:color/holo_blue_bright"
+        android:textColor="@android:color/black"
         app:layout_constraintHorizontal_bias="0.502" />
 
     <Button
