@@ -53,6 +53,7 @@ public class targetShootGame extends AppCompatActivity {
     public void targetMiss (){
         /*  I recommend making an alternative screen with 2 buttons, one for 'Play Again' and
          *  another for 'View High Scores' which would connect to High Scores java file*/
+        countDownTimer.cancel();
         music.stop();
         Toast.makeText(getApplicationContext(), "Sorry Game Over", Toast.LENGTH_SHORT).show();
         Intent callingIntent=getIntent();
@@ -115,9 +116,11 @@ public class targetShootGame extends AppCompatActivity {
     }
 
     public void targetMiss (View view){
+
+        targetMiss();
         /*  I recommend making an alternative screen with 2 buttons, one for 'Play Again' and
          *  another for 'View High Scores' which would connect to High Scores java file*/
-        music.stop();
+        /*music.stop();
         Toast.makeText(getApplicationContext(), "Sorry Game Over", Toast.LENGTH_SHORT).show();
         Intent callingIntent=getIntent();
         Log.i("Score:", String.valueOf(score));
@@ -126,6 +129,7 @@ public class targetShootGame extends AppCompatActivity {
 
         setResult(GAME_CODE, callingIntent);
         finish();
+        */
 
     }
 
