@@ -38,19 +38,26 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onActivityResult(int requestCode, int resultCode, Intent result){
         super.onActivityResult(requestCode,resultCode,result);
+        Log.i("Final", String.valueOf(requestCode));
         if (requestCode == login_code || requestCode==create_code){
             String msg=result.getStringExtra("MainMenuFinalProject");
             Log.i("MainMenuFinalProject",msg);
             Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
 
             Intent intent=new Intent(this, targetShootGame.class);
-            name=intent.getStringExtra("name");
-            //intent.putExtra("name", name);
-            startActivity(intent);
+            name=result.getStringExtra("name");
+            Log.i("name:", name);
+            //intent.putExtra("name",)
+            startActivityForResult(intent, 3);
 
         }else{
             Intent intent=new Intent(this, ShowHighScoreActivity.class);
+            //Log.i("Name:", name);
+            Log.i("Score:", String.valueOf(result.getFloatExtra("score", 0.0f)));
+
+            //intent.putExtra("name", result.getStringExtra("name"));
             intent.putExtra("name", name);
+
             intent.putExtra("score", result.getFloatExtra("score", 0.0f));
             startActivity(intent);
         }

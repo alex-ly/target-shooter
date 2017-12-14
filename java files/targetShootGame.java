@@ -10,6 +10,7 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageView;
@@ -117,9 +118,11 @@ public class targetShootGame extends AppCompatActivity {
         //passingIntent.putExtra("name", username);
         //passingIntent.putExtra("score", score*1.0f);
         //callingIntent.putExtra("name", username);
+        Log.i("Score:", String.valueOf(score));
+        //callingIntent.putExtra("name", callingIntent.getStringExtra("name"));
         callingIntent.putExtra("score", score*1.0f);
 
-        setResult(GAME_CODE);
+        setResult(GAME_CODE, callingIntent);
         finish();
 
     }
